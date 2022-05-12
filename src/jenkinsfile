@@ -1,0 +1,22 @@
+pipeline {
+  agent {
+    docker {
+      image 'mcr.microsoft.com/playwright:v1.21.0-focal'
+    }
+  }
+  stages {
+    stage('tests') {
+      steps {
+        dir('src') {
+          configFileProvider([configFile(fileId: 'template-id', variable: 'add_template')]) {
+            sh "cat ${env.add_template} > template.ts"
+            sh '''
+              yarn install
+              yarn test
+            '''
+          }
+        }
+      }
+    }
+  }
+}

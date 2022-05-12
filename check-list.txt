@@ -1,0 +1,13 @@
+Preconditions:
+    - User does not need to log in;
+    - The product is no longer sold by the seller, so it cannot be found by searching for products and by the company that sells it. We get access to it via a direct link;
+    - City to which you want to order delivery - Moscow;
+
+Check list:
+1. Go to the marketplace via a direct link;
+2. Сheck product name;
+3. Check seller name;
+4. Check item price;
+5. Select a city for delivery Moscow;
+6. Add item to cart;
+7. Go to the shopping cart and make sure that this product has been added.
